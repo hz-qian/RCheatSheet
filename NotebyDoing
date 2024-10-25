@@ -3,3 +3,14 @@ co<- rbind(co2010,co2012,co2014,co2016,co2018,co2020)
 
 # Using baseR to mutate all the -9 in "co" into NA
 co[co == -8] <- NA
+
+#a easier way to define the functon of calculating SSR
+calculate_ssr<-
+  function(model){
+    residuals<-residuals(model) # Extract the residuals
+
+    ssr<-sum(residuals^2) # Calculate the sum of squared residuals (SSR)
+    
+    return(ssr) # Return the SSR
+  }
+    
